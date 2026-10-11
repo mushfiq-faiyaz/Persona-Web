@@ -1,7 +1,7 @@
 # Mushfiqur Rahman Faiyaz — Personal Portfolio Website
-### Founder of RanFy Inc. • "A thinker who loves to solve daily problems"
+### Founder of RanFie Inc. • "A thinker who loves to solve daily problems"
 
-Welcome to your personal portfolio website! This site is designed from the ground up to reflect your identity, your deep midnight navy RanFy branding, your apps (**ExpendFy** and **PidiFie**), and to deliver a high-tech "wow factor" experience on both phones and computers.
+Welcome to your personal portfolio website! This site is designed from the ground up to reflect your identity, your deep midnight navy RanFie branding, your apps (**ExpendFy** and **PidiFie**), and to deliver a high-tech "wow factor" experience on both phones and computers.
 
 ---
 
@@ -41,12 +41,13 @@ Here is the simple map of your project files:
   - **`clock.js`** — Live Bangladesh clock (UTC+6) with day/night indicator.
   - **`main.js`** — Handwriting logo intro, 3D card tilt, theme toggle, easter egg, and profile sharing.
 - **`assets/images/`**
-  - `ranfy-logo.png` — Your original RanFy Inc. logo.
-  - `ranfy-logo-transparent.png` — Transparent white logo for dark navy mode.
-  - `ranfy-logo-dark.png` — Deep navy logo for light mode.
+  - `ranfie-logo.png` — Your original RanFie Inc. logo.
+  - `ranfie-logo-transparent.png` — Transparent white logo for dark navy mode.
+  - `ranfie-logo-dark.png` — Deep navy logo for light mode.
   - `expendfy-logo.png` & `expendfy-preview.png` — ExpendFy branding & preview.
   - `pidifie-logo.png` & `pidifie-preview.png` — PidiFie branding & preview.
   - `og-preview.png` — The image people see when your website link is shared on WhatsApp, Facebook, LinkedIn, etc.
+  - `favicon.svg` — Tab icon.
 
 ---
 
@@ -65,7 +66,7 @@ Search for `hero-title` or `hero-tagline` in `index.html`:
 Just change the words inside and save the file!
 
 ### 2. Changing the About Me Section
-Search for `The Story Behind RanFy` or `about-text` in `index.html` to update the three or four sentences describing your philosophy.
+Search for `The Story Behind RanFie` or `about-text` in `index.html` to update the three or four sentences describing your philosophy.
 
 ---
 
@@ -141,5 +142,5 @@ You can launch this website to the entire world with free hosting on **GitHub Pa
 
 ---
 
-## 🌟 Built with Pride for RanFy Inc.
+## 🌟 Built with Pride for RanFie Inc.
 *“A thinker who loves to solve daily problems.”*

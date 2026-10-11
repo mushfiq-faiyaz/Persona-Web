@@ -1,13 +1,13 @@
 /* ==========================================================================
    MUSHFIQUR RAHMAN FAIYAZ (MUSHFIQ) — PERSONAL PORTFOLIO
-   Founder of RanFy Inc. | Design System & Styling
+   Founder of RanFie Inc. | Design System & Styling
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. CSS VARIABLES & THEME TOKENS
    -------------------------------------------------------------------------- */
 :root {
-  /* Default: Deep Midnight Navy (from RanFy Logo #060644) */
+  /* Default: Deep Midnight Navy (from RanFie Logo #060644) */
   --bg-primary: #060644;
   --bg-secondary: #0a0c54;
   --bg-card: rgba(14, 17, 75, 0.65);

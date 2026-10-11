@@ -1,14 +1,14 @@
 {
   "name": "mushfiq-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio website for Mushfiqur Rahman Faiyaz (Mushfiq), Founder of RanFy Inc.",
+  "description": "Personal portfolio website for Mushfiqur Rahman Faiyaz (Mushfiq), Founder of RanFie Inc.",
   "scripts": {
     "start": "npx serve . -l 3000",
     "dev": "npx serve . -l 3000"
   },
   "keywords": [
     "portfolio",
-    "ranfy",
+    "ranfie",
     "mushfiq",
     "expendfy",
     "pidifie"

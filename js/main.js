@@ -1,6 +1,6 @@
 /**
  * Main Application Logic & Interactive Experience
- * Mushfiqur Rahman Faiyaz (Mushfiq) — Founder of RanFy Inc.
+ * Mushfiqur Rahman Faiyaz (Mushfiq) — Founder of RanFie Inc.
  */
 
 (function () {
@@ -15,7 +15,7 @@
   function dismissIntro() {
     if (!introCurtain) return;
     introCurtain.classList.add('hidden');
-    sessionStorage.setItem('ranfy_intro_seen', 'true');
+    sessionStorage.setItem('ranfie_intro_seen', 'true');
     setTimeout(() => {
       introCurtain.style.display = 'none';
     }, 750);
@@ -35,7 +35,7 @@
   };
 
   if (introCurtain) {
-    const hasSeen = sessionStorage.getItem('ranfy_intro_seen');
+    const hasSeen = sessionStorage.getItem('ranfie_intro_seen');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (hasSeen || prefersReducedMotion) {
@@ -165,7 +165,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    localStorage.setItem('ranfy_theme', theme);
+    localStorage.setItem('ranfie_theme', theme);
 
     if (themeToggleBtn) {
       themeToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
@@ -184,8 +184,8 @@
     }
   }
 
-  // Initialize theme from storage or default to dark (RanFy Midnight Navy)
-  const savedTheme = localStorage.getItem('ranfy_theme') || 'dark';
+  // Initialize theme from storage or default to dark (RanFie Midnight Navy)
+  const savedTheme = localStorage.getItem('ranfie_theme') || 'dark';
   applyTheme(savedTheme);
 
   if (themeToggleBtn) {
@@ -324,8 +324,8 @@
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
       const shareData = {
-        title: 'Mushfiqur Rahman Faiyaz | Founder of RanFy Inc.',
-        text: 'A thinker who loves to solve daily problems. Founder of RanFy Inc.',
+        title: 'Mushfiqur Rahman Faiyaz | Founder of RanFie Inc.',
+        text: 'A thinker who loves to solve daily problems. Founder of RanFie Inc.',
         url: window.location.href
       };
 

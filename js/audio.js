@@ -8,7 +8,7 @@ class SoundEngine {
   constructor() {
     this.ctx = null;
     // Sound is OFF by default unless user previously explicitly turned it ON
-    this.enabled = localStorage.getItem('ranfy_sound_enabled') === 'true';
+    this.enabled = localStorage.getItem('ranfie_sound_enabled') === 'true';
     this.masterGain = null;
   }
 
@@ -30,7 +30,7 @@ class SoundEngine {
   toggleSound() {
     this.init();
     this.enabled = !this.enabled;
-    localStorage.setItem('ranfy_sound_enabled', this.enabled ? 'true' : 'false');
+    localStorage.setItem('ranfie_sound_enabled', this.enabled ? 'true' : 'false');
     if (this.enabled) {
       this.playChime(660, 0.08, 'sine');
     }
