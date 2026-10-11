@@ -98,6 +98,19 @@ In both `index.html` and `projects.html`, search for `social-buttons-row`. You w
 
 ---
 
+## 📸 How to Swap Your Personal Photo Later
+
+If you ever take a new portrait or want to change the picture in the top hero section:
+
+### The 10-Second Method (No Code Changes Needed!)
+1. Take your new photo and name it **`mushfiq-portrait.png`**.
+2. Save it directly into the **`assets/images/`** folder (replacing the existing `mushfiq-portrait.png`).
+3. Refresh your website in the browser — your new photo will automatically appear with all the subtle blending, glowing aura, dot matrix pattern, and depth animations applied!
+
+*(Tip: For the smoothest blending, use a portrait with a transparent background or dark background so its edges softly dissolve into your midnight navy color).*
+
+---
+
 ## 🖼️ How to Replace the Screenshot Placeholders
 
 1. Take a screenshot of your app or export an image from Figma/Canva.

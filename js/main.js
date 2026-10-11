@@ -108,10 +108,23 @@
       cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
     });
 
+    const portraitWrapper = document.querySelector('.portrait-image-wrapper');
+    let portraitCurrentX = 0;
+    let portraitCurrentY = 0;
+
     function loopCursor() {
       glowX += (mouseX - glowX) * 0.15;
       glowY += (mouseY - glowY) * 0.15;
       cursorGlow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
+
+      if (portraitWrapper) {
+        const targetX = ((mouseX / window.innerWidth) - 0.5) * -16;
+        const targetY = ((mouseY / window.innerHeight) - 0.5) * -16;
+        portraitCurrentX += (targetX - portraitCurrentX) * 0.08;
+        portraitCurrentY += (targetY - portraitCurrentY) * 0.08;
+        portraitWrapper.style.transform = `translate3d(${portraitCurrentX.toFixed(2)}px, ${portraitCurrentY.toFixed(2)}px, 0)`;
+      }
+
       requestAnimationFrame(loopCursor);
     }
     loopCursor();

@@ -551,12 +551,183 @@ body {
    7. HERO AREA
    -------------------------------------------------------------------------- */
 .hero-section {
+  position: relative;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.hero-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.hero-text-col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.75rem;
-  padding-top: 1.5rem;
   position: relative;
+  z-index: 2;
+}
+
+/* Portrait Column & Atmospheric Moody Blending */
+.hero-portrait-col {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+@media (min-width: 960px) {
+  .hero-layout-grid {
+    grid-template-columns: minmax(460px, 1.05fr) minmax(420px, 0.95fr);
+    gap: 2.5rem;
+    min-height: 560px;
+    align-items: flex-start;
+  }
+
+  .hero-portrait-col {
+    /* Let the photo bleed seamlessly to the right viewport edge */
+    margin-right: calc(-1 * (max(0px, (100vw - var(--container-max)) / 2) + 1.5rem));
+    width: calc(100% + max(0px, (100vw - var(--container-max)) / 2) + 1.5rem);
+    height: 100%;
+    min-height: 560px;
+    margin-top: 0;
+  }
+}
+
+.portrait-container {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  perspective: 1000px;
+}
+
+/* Soft glowing light behind head and shoulders (gentle, round halo with no hard edges) */
+.portrait-ambient-glow {
+  position: absolute;
+  top: 4%;
+  right: 8%;
+  width: min(450px, 72%);
+  height: min(450px, 72%);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, 
+    rgba(var(--accent-cyan-rgb), 0.36) 0%, 
+    rgba(14, 165, 233, 0.24) 28%, 
+    rgba(79, 70, 229, 0.12) 48%, 
+    transparent 68%
+  );
+  filter: blur(42px);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+  animation: portraitGlowPulse 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes portraitGlowPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.06); opacity: 1; }
+}
+
+[data-theme="light"] .portrait-ambient-glow {
+  background: radial-gradient(circle at center, rgba(2, 132, 199, 0.22) 0%, rgba(99, 102, 241, 0.1) 45%, transparent 68%);
+  filter: blur(38px);
+  opacity: 0.7;
+}
+
+.portrait-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
+}
+
+/* The actual portrait image */
+.hero-portrait-img {
+  width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: contain;
+  object-position: right top;
+  filter: contrast(1.08) brightness(0.96) saturate(0.90);
+  /* Smooth feathered radial mask: dissolves into midnight navy towards bottom and left */
+  -webkit-mask-image: radial-gradient(ellipse 92% 86% at 76% 20%, black 35%, rgba(0, 0, 0, 0.75) 58%, rgba(0, 0, 0, 0.25) 78%, transparent 95%);
+  mask-image: radial-gradient(ellipse 92% 86% at 76% 20%, black 35%, rgba(0, 0, 0, 0.75) 58%, rgba(0, 0, 0, 0.25) 78%, transparent 95%);
+  opacity: 0.96;
+  animation: portraitEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes portraitEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 0.96;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Faint digital dot matrix pattern overlay: fades in a matching round shape with no hard cutoffs */
+.portrait-dot-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(var(--accent-cyan-rgb), 0.45) 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(circle 240px at 72% 24%, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 32%, transparent 68%);
+  mask-image: radial-gradient(circle 240px at 72% 24%, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 32%, transparent 68%);
+  mix-blend-mode: screen;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+[data-theme="light"] .portrait-dot-grid {
+  background-image: radial-gradient(rgba(2, 132, 199, 0.3) 1.2px, transparent 1.2px);
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+}
+
+/* Subtle cyan mood vignette overlay */
+.portrait-vignette-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  background: linear-gradient(135deg, rgba(var(--accent-cyan-rgb), 0.22) 0%, rgba(14, 16, 95, 0.3) 100%);
+  -webkit-mask-image: radial-gradient(circle 240px at 72% 24%, black 20%, transparent 68%);
+  mask-image: radial-gradient(circle 240px at 72% 24%, black 20%, transparent 68%);
+  z-index: 3;
+}
+
+[data-theme="light"] .portrait-vignette-overlay {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, transparent 100%);
+}
+
+[data-theme="light"] .hero-portrait-img {
+  filter: contrast(1.02) brightness(0.96) saturate(0.92);
+  -webkit-mask-image: radial-gradient(ellipse 92% 86% at 76% 20%, black 35%, rgba(0, 0, 0, 0.75) 58%, rgba(0, 0, 0, 0.25) 78%, transparent 95%);
+  mask-image: radial-gradient(ellipse 92% 86% at 76% 20%, black 35%, rgba(0, 0, 0, 0.75) 58%, rgba(0, 0, 0, 0.25) 78%, transparent 95%);
 }
 
 /* Status Pill: "Building in Public" */
@@ -1631,6 +1802,60 @@ body {
 /* --------------------------------------------------------------------------
    15. RESPONSIVE DESIGN & MEDIA QUERIES
    -------------------------------------------------------------------------- */
+@media (max-width: 959px) {
+  .hero-layout-grid {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: auto;
+  }
+
+  .hero-portrait-col {
+    position: absolute;
+    top: -20px;
+    right: -15px;
+    width: min(290px, 75vw);
+    height: 310px;
+    margin-right: 0;
+    margin-top: 0;
+    opacity: 0.2; /* Softly faded into top-right background */
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .portrait-container {
+    max-width: 100%;
+    height: 100%;
+    min-height: auto;
+  }
+
+  .hero-portrait-img {
+    max-height: 100%;
+    object-position: right top;
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 80% 20%, black 15%, transparent 75%);
+    mask-image: radial-gradient(ellipse 85% 75% at 80% 20%, black 15%, transparent 75%);
+  }
+
+  .hero-text-col {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-name, .hero-intro-text, .hero-tagline {
+    text-shadow: 0 2px 24px rgba(6, 6, 68, 0.98), 0 0 12px rgba(6, 6, 68, 0.85);
+  }
+
+  [data-theme="light"] .hero-portrait-col {
+    opacity: 0.14;
+  }
+
+  [data-theme="light"] .hero-name,
+  [data-theme="light"] .hero-intro-text,
+  [data-theme="light"] .hero-tagline {
+    text-shadow: 0 2px 14px rgba(255, 255, 255, 0.98);
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --header-height: 68px;
@@ -1647,6 +1872,14 @@ body {
 
   .btn-share {
     padding: 0.5rem;
+  }
+
+  .hero-portrait-col {
+    width: min(240px, 65vw);
+    height: 270px;
+    top: -15px;
+    right: -10px;
+    opacity: 0.18;
   }
 
   .about-card,
