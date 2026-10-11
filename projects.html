@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Projects — Mushfiqur Rahman Faiyaz | RanFy Inc.</title>
+  <meta name="title" content="Projects — Mushfiqur Rahman Faiyaz | RanFy Inc.">
+  <meta name="description" content="Explore applications built by Mushfiq at RanFy Inc., including ExpendFy (smart expense management) and PidiFie (privacy-first lightweight PDF editor).">
+  <meta name="theme-color" content="#060644">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ranfy.me/projects.html">
+  <meta property="og:title" content="Projects — Mushfiqur Rahman Faiyaz | RanFy Inc.">
+  <meta property="og:description" content="Explore ExpendFy and PidiFie, built by Mushfiq to solve everyday problems.">
+  <meta property="og:image" content="assets/images/og-preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:image" content="assets/images/og-preview.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/ranfy-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Living Aurora Background Canvas -->
+  <canvas id="aurora-canvas"></canvas>
+
+  <!-- Glowing Cursor Elements (Desktop) -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Page wipe transition curtain -->
+  <div id="page-wipe-curtain" aria-hidden="true"></div>
+
+  <!-- =====================================================================
+       SITE HEADER & NAVIGATION
+       ===================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+
+      <!-- Logo & Brand link -->
+      <a href="index.html" class="brand-link" title="Back to Home (Click 5 times for surprise!)">
+        <div class="brand-logo-wrap">
+          <img src="assets/images/ranfy-logo-transparent.png" alt="RanFy Inc. Logo" class="brand-logo-img logo-white">
+          <img src="assets/images/ranfy-logo-dark.png" alt="RanFy Inc. Logo" class="brand-logo-img logo-dark">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">RanFy</span>
+          <span class="brand-corp">INC.</span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action buttons: Share, Sound Toggle, Theme Switch -->
+      <div class="header-actions">
+        <button class="btn-share" aria-label="Share projects page" title="Share this page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span>Share</span>
+        </button>
+
+        <button id="sound-toggle-btn" class="icon-btn" aria-label="Toggle sound effects" title="Sound effects: Off (Click to enable)">
+          <svg viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <button id="theme-toggle-btn" class="icon-btn theme-toggle-btn" aria-label="Toggle theme appearance" title="Switch Theme">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN WRAPPER
+       ===================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- Page Hero Area -->
+    <section class="projects-header-hero" aria-labelledby="projects-page-title">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <span class="radar-beacon"></span>
+        <span class="section-tag">RanFy Inc. Portfolio</span>
+      </div>
+      <h1 id="projects-page-title" class="section-title" style="font-size: clamp(2.2rem, 5vw, 3.2rem);">
+        Apps Built to Solve Everyday Problems
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 680px; font-size: 1.15rem; line-height: 1.6;">
+        A showcase of independent software crafted by <strong>Mushfiq</strong>. Simple, focused, and designed around real daily routines.
+      </p>
+    </section>
+
+    <!-- Detailed Projects List -->
+    <section class="projects-deep-list" aria-label="Applications List">
+
+      <!-- ===================================================================
+           PROJECT 1: EXPENDFY
+           =================================================================== -->
+      <article id="expendfy" class="project-detail-card" data-app="expendfy">
+        <div class="card-ambient-glow" aria-hidden="true"></div>
+
+        <div class="project-detail-info">
+          <div class="app-identity">
+            <div class="app-logo-wrap">
+              <img src="assets/images/expendfy-logo.png" alt="ExpendFy Logo" class="app-logo-img">
+            </div>
+            <div class="app-title-group">
+              <span class="app-badge">Personal Finance</span>
+              <h3>ExpendFy</h3>
+            </div>
+          </div>
+
+          <p class="app-desc" style="font-size: 1.1rem;">
+            A personal app that helps people understand and manage their daily spending.
+          </p>
+
+          <!-- Problem & Solution Breakdown -->
+          <div class="project-pillars-grid">
+            <div class="pillar-box">
+              <span class="pillar-title">The Problem</span>
+              <p class="pillar-desc">
+                Most budgeting apps are overloaded with complex accounting tables and intrusive ads, making daily expense tracking feel like a chore.
+              </p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-title">The Solution</span>
+              <p class="pillar-desc">
+                ExpendFy simplifies logging down to seconds with instant visual clarity, helping users see where their money goes without friction.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature Tags -->
+          <div class="project-tags-list">
+            <span class="tag-pill">Daily Tracking</span>
+            <span class="tag-pill">Visual Breakdown</span>
+            <span class="tag-pill">Zero Friction</span>
+            <span class="tag-pill">Clean UI</span>
+          </div>
+
+          <div style="display: flex; gap: 0.8rem; margin-top: 0.5rem; align-items: center;">
+            <a href="index.html#built" class="btn-primary" style="font-size: 0.88rem; padding: 0.55rem 1.3rem;">
+              <span>Home Overview</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Visual Slot -->
+        <div class="project-visual-slot">
+          <div class="project-hero-preview">
+            <img src="assets/images/expendfy-preview.png" alt="ExpendFy Interface Screenshot Mockup">
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           PROJECT 2: PIDIFIE
+           =================================================================== -->
+      <article id="pidifie" class="project-detail-card" data-app="pidifie">
+        <div class="card-ambient-glow" style="background-color: #6366f1;" aria-hidden="true"></div>
+
+        <div class="project-detail-info">
+          <div class="app-identity">
+            <div class="app-logo-wrap">
+              <img src="assets/images/pidifie-logo.png" alt="PidiFie Logo" class="app-logo-img">
+            </div>
+            <div class="app-title-group">
+              <span class="app-badge">Productivity &amp; Utility</span>
+              <h3>PidiFie</h3>
+            </div>
+          </div>
+
+          <p class="app-desc" style="font-size: 1.1rem;">
+            My own personal PDF reader and editor, made as a simple alternative to heavy PDF software.
+          </p>
+
+          <!-- Problem & Solution Breakdown -->
+          <div class="project-pillars-grid">
+            <div class="pillar-box">
+              <span class="pillar-title">The Problem</span>
+              <p class="pillar-desc">
+                Traditional desktop PDF readers are heavy, slow to launch, and require subscriptions for basic reading and annotations.
+              </p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-title">The Solution</span>
+              <p class="pillar-desc">
+                PidiFie runs entirely in your browser with zero server uploads, keeping all documents completely private and lightening your workflow.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature Tags -->
+          <div class="project-tags-list">
+            <span class="tag-pill">Privacy First</span>
+            <span class="tag-pill">Browser Native</span>
+            <span class="tag-pill">Lightweight</span>
+            <span class="tag-pill">Instant Load</span>
+          </div>
+
+          <div style="display: flex; gap: 0.8rem; margin-top: 0.5rem; align-items: center;">
+            <a href="index.html#built" class="btn-primary" style="font-size: 0.88rem; padding: 0.55rem 1.3rem;">
+              <span>Home Overview</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Visual Slot -->
+        <div class="project-visual-slot">
+          <div class="project-hero-preview">
+            <img src="assets/images/pidifie-preview.png" alt="PidiFie Interface Screenshot Mockup">
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           INSTRUCTION FOR MUSHFIQ TO ADD NEW APPS IN THE FUTURE:
+           To add a 3rd app, simply copy from <article> to </article> above,
+           paste it right here, and change the name, description, and images!
+           =================================================================== -->
+
+    </section>
+
+    <!-- Return to Home CTA -->
+    <div style="text-align: center; padding: 2rem 0;">
+      <a href="index.html" class="btn-secondary" style="display: inline-flex;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- =====================================================================
+       SITE FOOTER
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="brand-link">
+          <div class="brand-logo-wrap">
+            <img src="assets/images/ranfy-logo-transparent.png" alt="RanFy Inc." class="brand-logo-img logo-white">
+            <img src="assets/images/ranfy-logo-dark.png" alt="RanFy Inc." class="brand-logo-img logo-dark">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Mushfiqur Rahman Faiyaz</span>
+            <span class="brand-corp">Founder of RanFy Inc.</span>
+          </div>
+        </div>
+
+        <div class="social-buttons-row">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" data-tooltip="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" data-tooltip="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-btn" data-tooltip="X (Twitter)" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" data-tooltip="Facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          <span>&copy; <span id="year">2026</span> RanFy Inc. • Designed with craft for Mushfiq.</span>
+        </div>
+        <div>
+          <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.82rem;">Home Page</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/aurora.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

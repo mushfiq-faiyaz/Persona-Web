@@ -1,0 +1,18 @@
+{
+  "name": "mushfiq-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Mushfiqur Rahman Faiyaz (Mushfiq), Founder of RanFy Inc.",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "ranfy",
+    "mushfiq",
+    "expendfy",
+    "pidifie"
+  ],
+  "author": "Mushfiqur Rahman Faiyaz",
+  "license": "MIT"
+}

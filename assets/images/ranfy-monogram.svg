@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <!-- RanFy Monogram -->
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Vertical Spine -->
+    <path class="rf-draw rf-stem" d="M 171 138 L 171 381" stroke-width="15" stroke-linecap="square" />
+    <!-- Upper Loop -->
+    <path class="rf-draw rf-loop" d="M 171 145 C 248 145, 248 266, 171 266" stroke-width="14" />
+    <!-- Head Circle -->
+    <circle class="rf-draw rf-head" cx="251" cy="149" r="19" stroke-width="12" fill="none" />
+    <!-- Arm -->
+    <path class="rf-draw rf-arm" d="M 244 204 C 278 190, 303 165, 309 137" stroke-width="13" stroke-linecap="square" />
+    <!-- Leg -->
+    <path class="rf-draw rf-leg" d="M 233 214 C 265 224, 292 248, 308 282" stroke-width="14" stroke-linecap="square" />
+  </g>
+  <!-- Wordmark -->
+  <g class="rf-wordmark" fill="currentColor">
+    <!-- R -->
+    <path d="M 190 292 h 21 c 10 0 16 5 16 13 c 0 6 -4 10 -9 12 l 11 20 h -8 l -10 -19 h -13 v 19 h -7 z m 7 6 v 14 h 13 c 6 0 10 -3 10 -7 s -4 -7 -10 -7 z" />
+    <!-- A -->
+    <path d="M 234 337 l 15 -45 h 8 l 15 45 h -8 l -4 -12 h -18 l -4 12 z m 14 -18 h 14 l -7 -22 z" />
+    <!-- N -->
+    <path d="M 284 292 h 7 l 20 29 v -29 h 7 v 45 h -7 l -20 -29 v 29 h -7 z" />
+    <!-- F -->
+    <path d="M 328 292 h 27 v 6 h -20 v 13 h 17 v 6 h -17 v 20 h -7 z" />
+    <!-- Y -->
+    <path d="M 364 292 h 8 l 11 18 l 11 -18 h 8 l -15 25 v 20 h -8 v -20 z" />
+  </g>
+  <!-- INC. Subtext -->
+  <text class="rf-subtext" x="332" y="357" fill="currentColor" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="14.5" font-weight="700" letter-spacing="3.5">INC.</text>
+</svg>
